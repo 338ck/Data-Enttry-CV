@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anderson Smith - Web Developer CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 0;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 24px;
+            width: calc(100% - 24px);
+            height: 2px;
+            background-color: #2c3e50;
+        }
+
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .main-content {
+            padding: 40px 40px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 4px solid #3498db;
+            display: block;
+            object-fit: cover;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .section-title::before {
+            content: '●';
+            font-size: 24px;
+            margin-right: 10px;
+            color: #3498db;
+        }
+
+        .sidebar .section-title::before {
+            content: '◉';
+        }
+
+        .about-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+
+        .contact-item {
+            font-size: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-item-icon {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .social-link {
+            font-size: 13px;
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: #34495e;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #3498db;
+            border-radius: 3px;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 40px;
+            margin: -40px -40px 30px -40px;
+        }
+
+        .header h1 {
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #bdc3c7;
+            margin-top: 5px;
+        }
+
+        .job-item {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .job-date {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .job-company {
+            font-size: 13px;
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .job-description {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .section-heading {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-heading::before {
+            content: '●';
+            font-size: 18px;
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        .signature-line {
+            border-top: 1px solid #2c3e50;
+            width: 150px;
+            margin-top: 20px;
+        }
+
+        .main-content {
+            border-right: 2px solid #2c3e50;
+            margin-right: 24px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                padding: 20px;
+            }
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="https://i.postimg.cc/xdRQkY7Z/ok-under-128kb.jpg/150" alt="Profile" class="profile-img">
+
+            <div class="section-title">Professional Summary</div>
+            <p class="about-text">
+                Detail-oriented and motivated professional with practical knowledge in web development and data entry.
+                 Skilled in creating and maintaining responsive websites using HTML, CSS, JavaScript,
+                  and basic PHP, while ensuring clean design and user-friendly interfaces. Experienced 
+                  in accurate data entry, data formatting, and document management using MS Excel and MS Word.
+                   Strong ability to manage time effectively, follow instructions carefully,
+                    and deliver error-free work. Eager to learn new technologies and contribute positively
+                     to a growing organization.
+            </p>
+
+            <div class="section-title">Pro Skills</div>
+<div class="skill-item">
+                <div class="skill-name">Office package</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-name">HTML</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">CSS</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Mongodb</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">php</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">xampp</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Haththasinhage Chaminda Kumara</h1>
+                <p>WEB DEVELOPER and Data Entry</p>
+            </div>
+
+            <div class="section-heading">Experiences</div>
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="job-company">freelancer</span>
+                </div>
+                <div class="job-title">Junior Web Developer and data Entry </div>
+                <div class="job-description">
+                   Built and maintained basic websites using HTML, CSS, and JavaScript.
+
+                   Entered, organized, and maintained data accurately using Excel and Word.
+                </div>
+            </div>
+ <div class="section-title">Personal Information</div>
+<div class="contact-item">
+                <span class="contact-item-icon">01.</span>
+                <span>Name - H Chaminda Kumara</span>
+            </div>
+<div class="contact-item">
+                <span class="contact-item-icon">02.</span>
+                <span>Addres - no 338 k g 1/2 Left Bank Beralihela Thissamaharamaya</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-item-icon">03.</span>
+                <span>phone Number - +94704940118</span>
+            </div>
+<div class="contact-item">
+                <span class="contact-item-icon">04.</span>
+                <span>Date of Birth - 1981.07.16</span>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-item-icon">05.</span>
+                <span>Email - ckthissa@email.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-item-icon">06.</span>
+                <span>National ID - 198119803136</span>
+            </div>
+            
+<div class="contact-item">
+                <span class="contact-item-icon">07.</span>
+                <span>Marital status - unmarried</span>
+            </div>
+
+            <div class="section-heading">Educational Qualification</div>
+            <div class="job-item">
+                <div class="job-titl">up to A/L</div>
+                <div class="job-titl">IT Diploma</div>
+                 <div class="job-titl">software Engineering HND (Currently learning..)</div>
+                  <div class="job-titl">counseling psychology Diploma</div>
+            </div>
+
+            <div class="section-heading">Career Objective</div>
+                <div class="job-description">To obtain a challenging position as a Web Developer or Data Entry Operator
+                     where I can utilize my technical skills, attention to detail, and strong work ethic
+                      to contribute to organizational growth while continuously enhancing my professional 
+                      knowledge and experience in the IT field.</div>
+<br>
+                     <div class="section-heading">Certification</div>
+                      
+                    <div class="job-description">I hereby certify that all the information stated above is true and correct.</div>
+                     <br>
+                    <div class="job-header">
+                    <span class="job-company">Date - 2025.12.14</span>
+                    <span class="job-company">Signature - chaminda</span>
+                </div>
+                <!--<div class="signature-line"></div>-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
